@@ -179,5 +179,3 @@
 * (London, 2019, Health benefits section, para. 2)
 
 ---
-
-Would you like a **PDF version** of this APA guide with colors and clean formatting, or a **side-by-side comparison with MLA**?
