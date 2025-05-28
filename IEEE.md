@@ -1,5 +1,8 @@
 ### THIS IS CHATGPT GENERATED AND I HAVE NOT VERIFIED THIS
 
+[MLA](https://github.com/Maaz-319/temp/blob/main/MLA.md)
+[APA](https://github.com/Maaz-319/temp/blob/main/APA.md)
+
 ---
 
 ## ✅ IEEE Format – Quiz Cheat Sheet (with Breakdown & Examples)

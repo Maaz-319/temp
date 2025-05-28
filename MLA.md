@@ -1,5 +1,8 @@
 ### THIS IS CHATGPT GENERATED AND I HAVE NOT VERIFIED THIS
 
+[APA](https://github.com/Maaz-319/temp/blob/main/APA.md)
+[IEEE](https://github.com/Maaz-319/temp/blob/main/IEEE.md)
+
 ---
 
 ## ✅ **MLA Citation & In-Text Examples — With Breakdown**
