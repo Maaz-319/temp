@@ -30,5 +30,6 @@ int main()
             else pix = 255;
         }
     }
+    file.close();
     return 0;
 }
