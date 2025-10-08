@@ -60,3 +60,10 @@ const int *array_get(const int *arr, int size, int index)
     if (index < size) return arr + index;
     else return nullptr;
 }
+
+void array_set(int *arr, int size, int index, int value)
+{
+    if (size <= 0) return;
+    if (index < size) arr[index] = value;
+    else std::cerr << "\n[INDEX OUT OF BOUND] Error: The provided index is greater than array size\n";
+}
