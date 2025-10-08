@@ -31,3 +31,10 @@ void sort_array(int *arr, int size)
         std::swap(arr[i], arr[min_idx]);
     }
 }
+
+void print_array(const int *arr, int size)
+{
+    if (size <= 0) return;
+    for (int i = 0; i < size; i++) std::cout << arr[i] << " ";
+    std::cout << "\n";
+}
