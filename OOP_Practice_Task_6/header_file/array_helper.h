@@ -38,3 +38,11 @@ void print_array(const int *arr, int size)
     for (int i = 0; i < size; i++) std::cout << arr[i] << " ";
     std::cout << "\n";
 }
+
+void print_array_to_file(std::string filename, const int *arr, int size)
+{
+    if (size <= 0) return;
+    std::ofstream file(filename + ".txt");
+    for (int i = 0; i < size; i++) file << arr[i] << " ";
+    file.close();
+}
