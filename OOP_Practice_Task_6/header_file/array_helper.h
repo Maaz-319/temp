@@ -91,3 +91,5 @@ int array_max(const int *arr, int size)
     for (int i = 1; i < size; i++) max_num = std::max(max_num, arr[i]);
     return max_num;
 }
+
+void my_swap(int* a, int* b) { return std::swap(*a, *b); }
