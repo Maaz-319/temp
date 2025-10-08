@@ -75,3 +75,11 @@ int array_sum(const int *arr, int size)
     for (int i = 0; i < size; i++) sum += arr[i];
     return sum;
 }
+
+int array_min(const int *arr, int size)
+{
+    if (size <= 0) return -1;
+    int min_num = arr[0];
+    for (int i = 1; i < size; i++) min_num = std::min(min_num, arr[i]);
+    return min_num;
+}
