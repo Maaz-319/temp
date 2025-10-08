@@ -12,3 +12,5 @@ int *create_array(int s)
     int *ptr = new int[s];
     return ptr;
 }
+
+int *delete_array(int *ptr, int *size) { *size = 0; delete[] ptr; return nullptr; }
