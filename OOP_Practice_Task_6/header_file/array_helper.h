@@ -83,3 +83,11 @@ int array_min(const int *arr, int size)
     for (int i = 1; i < size; i++) min_num = std::min(min_num, arr[i]);
     return min_num;
 }
+
+int array_max(const int *arr, int size)
+{
+    if (size <= 0) return -1;
+    int max_num = arr[0];
+    for (int i = 1; i < size; i++) max_num = std::max(max_num, arr[i]);
+    return max_num;
+}
