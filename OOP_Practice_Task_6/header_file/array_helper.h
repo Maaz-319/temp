@@ -67,3 +67,11 @@ void array_set(int *arr, int size, int index, int value)
     if (index < size) arr[index] = value;
     else std::cerr << "\n[INDEX OUT OF BOUND] Error: The provided index is greater than array size\n";
 }
+
+int array_sum(const int *arr, int size)
+{
+    if (size <= 0) return 0;
+    int sum = 0;
+    for (int i = 0; i < size; i++) sum += arr[i];
+    return sum;
+}
