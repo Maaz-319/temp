@@ -46,3 +46,10 @@ void print_array_to_file(std::string filename, const int *arr, int size)
     for (int i = 0; i < size; i++) file << arr[i] << " ";
     file.close();
 }
+
+void fill_array_random(int *arr, int size, int minValue, int maxValue)
+{
+    if (size <= 0) return;
+    srand(time(NULL));
+    for (int i = 0; i < size; i++) arr[i] = minValue + rand() % (maxValue - minValue);
+}
