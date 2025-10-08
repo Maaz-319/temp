@@ -53,3 +53,10 @@ void fill_array_random(int *arr, int size, int minValue, int maxValue)
     srand(time(NULL));
     for (int i = 0; i < size; i++) arr[i] = minValue + rand() % (maxValue - minValue);
 }
+
+const int *array_get(const int *arr, int size, int index)
+{
+    if (size <= 0) return nullptr;
+    if (index < size) return arr + index;
+    else return nullptr;
+}
