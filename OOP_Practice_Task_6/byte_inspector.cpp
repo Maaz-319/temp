@@ -11,6 +11,6 @@ void inspectBytes(void *data, size_t size)
 
 int main()
 {
-    int x = 305419896;
+    int x = 0x123456;
     inspectBytes(&x, sizeof(x));
 }
