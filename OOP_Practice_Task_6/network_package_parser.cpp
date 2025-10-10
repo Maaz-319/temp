@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip> // for hex and setw
+#include <iomanip>
 
 using namespace std;
 
