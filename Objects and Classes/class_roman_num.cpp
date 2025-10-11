@@ -33,7 +33,7 @@ class Roman_Number
             if (curr_value >= largest)
             {
                 largest = curr_value;
-                total += largest;
+                total += curr_value;
             }
             else total -= curr_value;
         }
