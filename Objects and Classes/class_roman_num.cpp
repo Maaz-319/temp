@@ -9,7 +9,7 @@ class Roman_Number
 
     int r_to_d_mapper(const char &ch)
     {
-        switch (ch)
+        switch (toupper(ch))
         {
             case 'I': return 1; break;
             case 'V': return 5; break;
