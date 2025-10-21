@@ -1,3 +1,64 @@
 /.vscode/
 /.vs/
 *.exe
+
+# Visual Studio / C++
+# Ignore Visual Studio temporary, build and user-specific files
+# Binary and build outputs
+*.obj
+*.o
+*.lo
+*.la
+*.al
+*.out
+*.a
+*.lib
+*.dll
+*.app
+*.so
+*.dylib
+*.pdb
+*.ipdb
+*.ilk
+*.idb
+*.ipch
+*.sdf
+*.opendb
+
+# Visual Studio workspace and user files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/Debug/
+x64/Release/
+build/
+cmake-build-*/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Misc
+*.log
+*.tlog
+*.lastbuildstate
+*.err
+*.pch
+*.rsp
+*.iobj
+*.unsuccessfulbuild
+*.ncb
+
+# Keep IDE folders ignored (already present above but included as safety)
+/.vs/
+/.vscode/
