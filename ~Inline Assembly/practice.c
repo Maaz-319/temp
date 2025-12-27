@@ -98,6 +98,20 @@ void fabonacci_time_comparison() {
     printf("Assembly function time: %f seconds\n", time_asm);
 }
 
+int max(int a, int b){
+    __asm__ volatile(
+        "cmp %0, %1 \n\t"
+        "jle 1f \n\t"
+        "mov %1, %0 \n\t"
+        "1: \n\t"
+        :"+r"(a)
+        :"r"(b)
+        :"cc"
+    );
+    return a;
+}
+
 int main(){
-    fabonacci_time_comparison();
+    printf("%d", max(20, -30));
+    return 0;
 }
