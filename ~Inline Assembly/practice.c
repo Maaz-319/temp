@@ -34,11 +34,11 @@ long power(long a, long b){
     if (b<1) return result;
     __asm__ volatile(
         "1: \n\t"
-        "imul %1, %0 \n\t"
-        "dec %2 \n\t"
+        "imul %2, %0 \n\t"
+        "dec %1 \n\t"
         "jnz 1b \n\t"
-        :"+r"(result)
-        :"r"(a), "r"(b)
+        :"+r"(result), "+r"(b)
+        :"r"(a)
         : "cc"
     );
     return result;
@@ -112,6 +112,6 @@ int max(int a, int b){
 }
 
 int main(){
-    printf("%d", max(20, -30));
+    printf("%ld", power(2, 3));
     return 0;
 }
