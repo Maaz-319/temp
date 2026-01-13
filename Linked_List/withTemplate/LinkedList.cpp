@@ -74,6 +74,10 @@ public:
     {
         clear();
     }
+
+    void bubble_sort(){
+        
+    }
 };
 
 int main()
