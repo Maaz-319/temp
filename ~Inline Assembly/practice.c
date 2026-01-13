@@ -111,6 +111,18 @@ int max(int a, int b){
     return a;
 }
 
+int no_self_bits(int num) {
+    int count = 0;
+    __asm__ volatile(
+        "1: \n\t"
+        "TEST %0, $1 \n\t"
+        "jz "
+        :"+r"(num), "+r"(count)
+        :
+        :"cc"
+    );
+}
+
 int main(){
     printf("%ld", power(2, 3));
     return 0;
