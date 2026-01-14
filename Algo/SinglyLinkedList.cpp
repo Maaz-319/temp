@@ -100,6 +100,14 @@ public:
         else for (auto& x: map) if (x.second == 1) cout << x.first << " ";
     }
 
+    void print_unique_once()
+    {
+        unordered_map<int, int> map;
+        for (Node *i = head; i; i = i->next) map[i->val]++;
+        if (map.empty()) cout << "\nLinkedin List Empty\n";
+        else for (auto& x: map) cout << x.first << " ";
+    }
+
     ~LinkedList()
     {
         while (head)
