@@ -54,7 +54,8 @@ public:
 
     void bubble_sort()
     {
-        if (!head) return;
+        if (!head)
+            return;
 
         bool swapped;
         do
@@ -72,6 +73,20 @@ public:
                 }
             }
         } while (swapped);
+    }
+
+    void selection_sort()
+    {
+        if (!head)
+            return;
+        for (Node *i = head; i && i->next->next; i = i->next)
+        {
+            Node* min = i;
+            for (Node *j = i->next; j; j = j->next) {
+                if (min->val > j->val) min = j;
+            }
+            swap(min->val, i->val);
+        }
     }
 
     ~LinkedList()
