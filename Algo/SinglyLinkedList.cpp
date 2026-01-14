@@ -1,5 +1,6 @@
 #include <iostream>
 #include <utility>
+#include <unordered_map>
 using namespace std;
 
 class Node
@@ -81,12 +82,22 @@ public:
             return;
         for (Node *i = head; i && i->next->next; i = i->next)
         {
-            Node* min = i;
-            for (Node *j = i->next; j; j = j->next) {
-                if (min->val > j->val) min = j;
+            Node *min = i;
+            for (Node *j = i->next; j; j = j->next)
+            {
+                if (min->val > j->val)
+                    min = j;
             }
             swap(min->val, i->val);
         }
+    }
+
+    void print_unique_elements()
+    {
+        unordered_map<int, int> map;
+        for (Node *i = head; i; i = i->next) map[i->val]++;
+        if (map.empty()) cout << "\nLinkedin List Empty\n";
+        else for (auto& x: map) if (x.second == 1) cout << x.first << " ";
     }
 
     ~LinkedList()
