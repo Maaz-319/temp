@@ -95,17 +95,45 @@ public:
     void print_unique_elements()
     {
         unordered_map<int, int> map;
-        for (Node *i = head; i; i = i->next) map[i->val]++;
-        if (map.empty()) cout << "\nLinkedin List Empty\n";
-        else for (auto& x: map) if (x.second == 1) cout << x.first << " ";
+        for (Node *i = head; i; i = i->next)
+            map[i->val]++;
+        if (map.empty())
+            cout << "\nLinkedin List Empty\n";
+        else
+            for (auto &x : map)
+                if (x.second == 1)
+                    cout << x.first << " ";
     }
 
     void print_unique_once()
     {
         unordered_map<int, int> map;
-        for (Node *i = head; i; i = i->next) map[i->val]++;
-        if (map.empty()) cout << "\nLinkedin List Empty\n";
-        else for (auto& x: map) cout << x.first << " ";
+        for (Node *i = head; i; i = i->next)
+            map[i->val]++;
+        if (map.empty())
+            cout << "\nLinkedin List Empty\n";
+        else
+            for (auto &x : map)
+                cout << x.first << " ";
+    }
+
+    void distances()
+    {
+        // will work correctly if there are even number of elements in list and each has a duplicate
+        unordered_map<int, int> map;
+        for (Node *i = head; i; i = i->next)
+        {
+            int d = 0;
+            if (map[i->val]++)
+                continue;
+            for (Node *j = i->next; j; j = j->next)
+            {
+                if (i != j && i->val == j->val)
+                    break;
+                d++;
+            }
+            cout << i->val << ": " << d << "\n";
+        }
     }
 
     ~LinkedList()
