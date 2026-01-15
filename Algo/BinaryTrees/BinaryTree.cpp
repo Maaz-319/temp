@@ -1,6 +1,7 @@
 #include <iostream>
 #include <climits>
 #include <utility>
+#include <queue>
 using namespace std;
 
 class Node
@@ -180,6 +181,23 @@ public:
     void postorder_traversal()
     {
         postorder_recursive(root);
+    }
+
+    void levelorder_traversal()
+    {
+        if (root == NULL)
+            return;
+        queue<Node *> q;
+        q.push(root);
+
+        while (!q.empty())
+        {
+            Node* curr = q.front();
+            q.pop();
+            cout << curr->data << " ";
+            if (curr->leftChild != NULL) q.push(curr->leftChild);
+            if (curr->rightChild != NULL) q.push(curr->rightChild);
+        }
     }
 
     ~BTree()
