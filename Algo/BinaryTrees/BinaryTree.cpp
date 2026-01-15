@@ -1,4 +1,5 @@
 #include <iostream>
+// #include <climits>
 using namespace std;
 
 class Node
@@ -61,13 +62,38 @@ public:
         root = insert(root, data);
     }
 
+    void insert_iterative(int data)
+    {
+        if (root == NULL)
+        {
+            root = new Node(data);
+            return;
+        }
+        Node *curr = root;
+        Node *parent = NULL;
+        while (curr != NULL)
+        {
+            parent = curr;
+            if (data <= curr->data)
+                curr = curr->leftChild;
+            else
+                curr = curr->rightChild;
+        }
+        if (data <= parent->data)
+            parent->leftChild = new Node(data);
+        else
+            parent->rightChild = new Node(data);
+    }
+
     bool search_recursive(int val)
     {
         return search(root, val);
     }
 
-    bool search_iteratice(int val)
+    bool search_iterative(int val)
     {
+        if (root == NULL)
+            return false;
         Node *curr = root;
         while (curr != NULL)
         {
@@ -79,6 +105,26 @@ public:
                 curr = curr->rightChild;
         }
         return false;
+    }
+
+    int min()
+    {
+        if (root == NULL)
+            return INT_MIN;
+        Node *curr = root;
+        while (curr->leftChild != NULL)
+            curr = curr->leftChild;
+        return curr->data;
+    }
+
+    int max()
+    {
+        if (root == NULL)
+            return INT_MIN;
+        Node *curr = root;
+        while (curr->rightChild != NULL)
+            curr = curr->rightChild;
+        return curr->data;
     }
 
     ~BTree()
