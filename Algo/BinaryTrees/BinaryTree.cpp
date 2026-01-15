@@ -62,6 +62,15 @@ private:
         return max(height_recursive(node->leftChild), height_recursive(node->rightChild)) + 1;
     }
 
+    void preorder_recursive(Node *node)
+    {
+        if (node == NULL)
+            return;
+        cout << node->data << " ";
+        preorder_recursive(node->leftChild);
+        preorder_recursive(node->rightChild);
+    }
+
 public:
     BTree() : root(NULL) {}
 
@@ -138,6 +147,11 @@ public:
     int get_height()
     {
         return height_recursive(root);
+    }
+
+    void preorder_traversal()
+    {
+        preorder_recursive(root);
     }
 
     ~BTree()
