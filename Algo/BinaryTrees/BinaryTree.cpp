@@ -55,7 +55,12 @@ private:
         delete node;
     }
 
-    
+    int height_recursive(Node *node)
+    {
+        if (node == NULL)
+            return -1;
+        return max(height_recursive(node->leftChild), height_recursive(node->rightChild)) + 1;
+    }
 
 public:
     BTree() : root(NULL) {}
@@ -128,6 +133,11 @@ public:
         while (curr->rightChild != NULL)
             curr = curr->rightChild;
         return curr->data;
+    }
+
+    int get_height()
+    {
+        return height_recursive(root);
     }
 
     ~BTree()
