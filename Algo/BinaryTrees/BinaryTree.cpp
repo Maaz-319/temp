@@ -1,5 +1,6 @@
 #include <iostream>
-// #include <climits>
+#include <climits>
+#include <utility>
 using namespace std;
 
 class Node
@@ -54,6 +55,8 @@ private:
         delete node;
     }
 
+    
+
 public:
     BTree() : root(NULL) {}
 
@@ -107,7 +110,7 @@ public:
         return false;
     }
 
-    int min()
+    int find_min()
     {
         if (root == NULL)
             return INT_MIN;
@@ -117,7 +120,7 @@ public:
         return curr->data;
     }
 
-    int max()
+    int find_max()
     {
         if (root == NULL)
             return INT_MIN;
