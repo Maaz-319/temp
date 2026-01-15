@@ -71,6 +71,24 @@ private:
         preorder_recursive(node->rightChild);
     }
 
+    void inorder_recursive(Node *node)
+    {
+        if (node == NULL)
+            return;
+        inorder_recursive(node->leftChild);
+        cout << node->data << " ";
+        inorder_recursive(node->rightChild);
+    }
+
+    void postorder_recursive(Node *node)
+    {
+        if (node == NULL)
+            return;
+        postorder_recursive(node->leftChild);
+        postorder_recursive(node->rightChild);
+        cout << node->data << " ";
+    }
+
 public:
     BTree() : root(NULL) {}
 
@@ -152,6 +170,16 @@ public:
     void preorder_traversal()
     {
         preorder_recursive(root);
+    }
+
+    void inorder_traversal()
+    {
+        inorder_recursive(root);
+    }
+
+    void postorder_traversal()
+    {
+        postorder_recursive(root);
     }
 
     ~BTree()
