@@ -33,12 +33,12 @@ private:
         return node;
     }
 
-    bool search(Node *node, int val)
+    Node* search(Node *node, int val)
     {
         if (node == NULL)
-            return false;
+            return NULL;
         if (node->data == val)
-            return true;
+            return node;
 
         if (val < node->data)
             return search(node->leftChild, val);
@@ -153,7 +153,7 @@ public:
             parent->rightChild = new Node(data);
     }
 
-    bool search_recursive(int val)
+    Node* search_recursive(int val)
     {
         return search(root, val);
     }
@@ -232,6 +232,11 @@ public:
             if (curr->rightChild != NULL)
                 q.push(curr->rightChild);
         }
+    }
+
+    bool delete_node(int val)
+    {
+
     }
 
     bool is_BST()
