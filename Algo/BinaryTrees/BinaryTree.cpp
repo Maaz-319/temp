@@ -233,7 +233,7 @@ public:
                 q.push(curr->rightChild);
         }
     }
-    
+
     bool is_BST()
     {
         return is_BST_recursive(root, INT_MIN, INT_MAX);
