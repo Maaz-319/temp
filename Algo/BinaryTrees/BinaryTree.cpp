@@ -90,6 +90,36 @@ private:
         cout << node->data << " ";
     }
 
+    bool isSubTreeLesser(Node *node, int val)
+    {
+        if (node == NULL)
+            return true;
+        if (node->data <= val && isSubTreeLesser(node->leftChild, val) && isSubTreeLesser(node->rightChild, val))
+            return true;
+        else
+            return false;
+    }
+
+    bool isSubTreeGreater(Node *node, int val)
+    {
+        if (node == NULL)
+            return true;
+        if (node->data > val && isSubTreeGreater(node->leftChild, val) && isSubTreeGreater(node->rightChild, val))
+            return true;
+        else
+            return false;
+    }
+
+    bool is_BST_recursive(Node *root)
+    {
+        if (root == NULL)
+            return true;
+        if (isSubTreeLesser(root->leftChild, root->data) && isSubTreeGreater(root->rightChild, root->data) && is_BST_recursive(root->leftChild) && is_BST_recursive(root->rightChild))
+            return true;
+        else
+            return false;
+    }
+
 public:
     BTree() : root(NULL) {}
 
@@ -200,6 +230,11 @@ public:
             if (curr->rightChild != NULL)
                 q.push(curr->rightChild);
         }
+    }
+
+    bool is_BST()
+    {
+        return is_BST_recursive(root);
     }
 
     ~BTree()
