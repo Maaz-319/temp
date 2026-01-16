@@ -192,11 +192,13 @@ public:
 
         while (!q.empty())
         {
-            Node* curr = q.front();
+            Node *curr = q.front();
             q.pop();
             cout << curr->data << " ";
-            if (curr->leftChild != NULL) q.push(curr->leftChild);
-            if (curr->rightChild != NULL) q.push(curr->rightChild);
+            if (curr->leftChild != NULL)
+                q.push(curr->leftChild);
+            if (curr->rightChild != NULL)
+                q.push(curr->rightChild);
         }
     }
 
