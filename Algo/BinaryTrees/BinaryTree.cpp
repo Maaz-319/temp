@@ -110,14 +110,16 @@ private:
             return false;
     }
 
-    bool is_BST_recursive(Node *root)
+    bool is_BST_recursive(Node *root, int min_val, int max_val)
     {
         if (root == NULL)
             return true;
-        if (isSubTreeLesser(root->leftChild, root->data) && isSubTreeGreater(root->rightChild, root->data) && is_BST_recursive(root->leftChild) && is_BST_recursive(root->rightChild))
-            return true;
-        else
+
+        if (root->data <= min_val || root->data >= max_val)
             return false;
+
+        return is_BST_recursive(root->leftChild, min_val, root->data) &&
+               is_BST_recursive(root->rightChild, root->data, max_val);
     }
 
 public:
@@ -234,7 +236,7 @@ public:
 
     bool is_BST()
     {
-        return is_BST_recursive(root);
+        return is_BST_recursive(root, INT_MIN, INT_MAX);
     }
 
     ~BTree()
