@@ -243,11 +243,11 @@ public:
     Node *delete_node(Node *node, int val)
     {
         if (node == NULL)
-            return node;
+            return NULL;
         if (val < node->data)
-            delete_node(root->leftChild, val);
+            node->leftChild = delete_node(node->leftChild, val);
         else if (val > node->data)
-            delete_node(root->rightChild, val);
+            node->rightChild = delete_node(node->rightChild, val);
         else
         {
             if (node->leftChild == NULL && node->rightChild == NULL)
@@ -269,7 +269,9 @@ public:
             }
             else
             {
-                Node* temp = find_min_util(node);
+                Node* temp = find_min_util(node->rightChild);
+                node->data = temp->data;
+                node->rightChild = delete_node(node->rightChild, temp->data);
             }
         }
         return node;
