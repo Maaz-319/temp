@@ -122,7 +122,7 @@ private:
                is_BST_recursive(root->rightChild, root->data, max_val);
     }
 
-    Node* find_min_util(Node* node)
+    Node *find_min_util(Node *node)
     {
         if (node == NULL)
             return NULL;
@@ -130,6 +130,43 @@ private:
         while (curr->leftChild != NULL)
             curr = curr->leftChild;
         return curr;
+    }
+
+    Node *delete_node_util(Node *node, int val)
+    {
+        if (node == NULL)
+            return NULL;
+        if (val < node->data)
+            node->leftChild = delete_node_util(node->leftChild, val);
+        else if (val > node->data)
+            node->rightChild = delete_node_util(node->rightChild, val);
+        else
+        {
+            if (node->leftChild == NULL && node->rightChild == NULL)
+            {
+                delete node;
+                node = NULL;
+            }
+            else if (node->leftChild == NULL)
+            {
+                Node *curr = node;
+                node = node->rightChild;
+                delete curr;
+            }
+            else if (node->rightChild == NULL)
+            {
+                Node *curr = node;
+                node = node->leftChild;
+                delete curr;
+            }
+            else
+            {
+                Node *temp = find_min_util(node->rightChild);
+                node->data = temp->data;
+                node->rightChild = delete_node_util(node->rightChild, temp->data);
+            }
+        }
+        return node;
     }
 
 public:
@@ -187,7 +224,7 @@ public:
 
     int find_min()
     {
-        Node* result = find_min_util(root);
+        Node *result = find_min_util(root);
         return (result == NULL) ? INT_MIN : result->data;
     }
 
@@ -240,41 +277,9 @@ public:
         }
     }
 
-    Node *delete_node(Node *node, int val)
+    void delete_node(int val)
     {
-        if (node == NULL)
-            return NULL;
-        if (val < node->data)
-            node->leftChild = delete_node(node->leftChild, val);
-        else if (val > node->data)
-            node->rightChild = delete_node(node->rightChild, val);
-        else
-        {
-            if (node->leftChild == NULL && node->rightChild == NULL)
-            {
-                delete node;
-                node = NULL;
-            }
-            else if (node->leftChild == NULL)
-            {
-                Node *curr = node;
-                node = node->rightChild;
-                delete curr;
-            }
-            else if (node->rightChild == NULL)
-            {
-                Node *curr = node;
-                node = node->leftChild;
-                delete curr;
-            }
-            else
-            {
-                Node* temp = find_min_util(node->rightChild);
-                node->data = temp->data;
-                node->rightChild = delete_node(node->rightChild, temp->data);
-            }
-        }
-        return node;
+        delete_node_util(root, val);
     }
 
     bool is_BST()
