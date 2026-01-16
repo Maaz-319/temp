@@ -122,6 +122,16 @@ private:
                is_BST_recursive(root->rightChild, root->data, max_val);
     }
 
+    Node* find_min_util(Node* node)
+    {
+        if (node == NULL)
+            return NULL;
+        Node *curr = node;
+        while (curr->leftChild != NULL)
+            curr = curr->leftChild;
+        return curr;
+    }
+
 public:
     BTree() : root(NULL) {}
 
@@ -177,12 +187,8 @@ public:
 
     int find_min()
     {
-        if (root == NULL)
-            return INT_MIN;
-        Node *curr = root;
-        while (curr->leftChild != NULL)
-            curr = curr->leftChild;
-        return curr->data;
+        Node* result = find_min_util(root);
+        return (result == NULL) ? INT_MIN : result->data;
     }
 
     int find_max()
@@ -234,8 +240,39 @@ public:
         }
     }
 
-    bool delete_node(int val)
+    Node *delete_node(Node *node, int val)
     {
+        if (node == NULL)
+            return node;
+        if (val < node->data)
+            delete_node(root->leftChild, val);
+        else if (val > node->data)
+            delete_node(root->rightChild, val);
+        else
+        {
+            if (node->leftChild == NULL && node->rightChild == NULL)
+            {
+                delete node;
+                node = NULL;
+            }
+            else if (node->leftChild == NULL)
+            {
+                Node *curr = node;
+                node = node->rightChild;
+                delete curr;
+            }
+            else if (node->rightChild == NULL)
+            {
+                Node *curr = node;
+                node = node->leftChild;
+                delete curr;
+            }
+            else
+            {
+                Node* temp = find_min_util(node);
+            }
+        }
+        return node;
     }
 
     bool is_BST()
