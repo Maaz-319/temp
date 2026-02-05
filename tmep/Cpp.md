@@ -31,6 +31,7 @@
 
 	* Integer overflow
 	* type casting
+	* Floating Point Imprecision
 
 	* working with strings
 	* string variables
