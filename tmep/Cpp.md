@@ -104,3 +104,6 @@
 	* append to file
 	* file modes
 	* file pointers
+# Exit Codes
+	* return 0
+	* return 1
