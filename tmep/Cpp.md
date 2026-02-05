@@ -29,14 +29,22 @@
 	* long long
 	* auto
 
+	* Integer overflow
+	* type casting
+
 	* working with strings
 	* string variables
 	* access string's one char (0-indexing)
+# Header Files and Libraries (useful resource -> https://manual.cs50.io/)
+	* #include <iostream>
+	* using namespace std;
+	* cmath
 # string functions
 	* concatenation
 	* length [length() and size()]
 	* at()
 	* C-Style Strings [char greeting2[] = "Hello";]
+	* String Comparison
 # Boolean Expressions
 # decision making
 	* if
@@ -87,3 +95,11 @@
 		- pass arrays & structs
 	## Scope concept
 	## Recursion
+	## Params to main()
+# File Handling
+	* ofstream
+	* ifstream
+	* read and write files
+	* append to file
+	* file modes
+	* file pointers
