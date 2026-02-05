@@ -12,11 +12,12 @@
 # Operators
 	* arithematic (+-*/%, ++, --)
 	* assignment (=)
-	* binary
+	* binary (&&, ||, &, |, ^, <<, >>)
 	* compound assignment (+=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=)
 	* comparison (==, !=, <, >, >=, <=)
 	* logical (&&, ||, !)
 	* operator precedance
+	* alphabetic form of operators
 # Comments
 # Data Types
 	* char
@@ -49,10 +50,13 @@
 # Boolean Expressions
 # decision making
 	* if
+	* composite if
+	* Multiple if
+	* Multiple vs nested if
+	* nested if
 	* else
 	* else if
 	* ternary
-	* nested if
 	* logical operators
 	* switch case
 # Loops
@@ -68,6 +72,14 @@
 	* omit array size [string fruit[] = {"Apple", "Water Melon", "Orange"};]
 	* getting array size using SIZEOF
 	* multi-dim arrays
+	## 2d array traversal
+		- int a[2][3] = { {1,2,3}, {4,5,6} };// Complete row initialization
+		- int b[2][3] = { 1,2,3,4,5,6 }; // Flattened initialization
+		- int c[][3] = { {1,2,3}, {4,5,6} }; // Rows can be omitted
+  		- int d[2][3] = { {1}, {4,5} }; // Partial initialization others default 0
+  		- int e[2][3] = {}; // All elements default 0
+
+int e[2][3] = {}; // All elements default 0
 # Structs
 	* creation
 	* Accessing
@@ -100,10 +112,14 @@
 # File Handling
 	* ofstream
 	* ifstream
+	* Text Files vs Binary Files
 	* read and write files
 	* append to file
+	* Storing var, arrays(char, int) to files
 	* file modes
 	* file pointers
+	* seek and tell
+	* PGM Binary Image Read and Write
 # Exit Codes
 	* return 0
 	* return 1
