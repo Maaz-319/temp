@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
 
@@ -111,6 +112,45 @@ string pre_to_infix(string exp)
     return st.top();
 }
 
+int postfix_evaluation(string postfix)
+{
+    stack<int> st;
+    for (char c : postfix)
+    {
+        if (isdigit(c))
+            st.push(c - '0');
+        else
+        {
+            int b = st.top();
+            st.pop();
+            int a = st.top();
+            st.pop();
+            switch (c)
+            {
+            case '^':
+                st.push(pow(a, b));
+                break;
+            case '*':
+                st.push(a * b);
+                break;
+            case '/':
+                st.push(a / b);
+                break;
+            case '+':
+                st.push(a + b);
+                break;
+            case '-':
+                st.push(a - b);
+                break;
+
+            default:
+                break;
+            }
+        }
+    }
+    return st.top();
+}
+
 int main()
 {
     string exp;
@@ -120,5 +160,6 @@ int main()
     cout << "\nPreFix: " << in_to_prefix(exp);
     cout << "\nPostfix to Infix: " << post_to_infix(in_to_postfix(exp));
     cout << "\nPrefix to Infix: " << pre_to_infix(in_to_prefix(exp));
+    cout << "\nEvaluation: " << postfix_evaluation(in_to_postfix(exp));
     return 0;
 }
