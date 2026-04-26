@@ -5,7 +5,8 @@ using namespace std;
 
 void reverse(queue<int> &q)
 {
-    if (q.empty()) return;
+    if (q.empty())
+        return;
     int p = q.front();
     q.pop();
     reverse(q);
