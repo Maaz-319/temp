@@ -1,0 +1,378 @@
+## 1) MCQs
+
+Try answering first, then check the key at the end.
+
+1. AES uses a fixed block size of:
+   A. 64 bits
+   B. 128 bits
+   C. 192 bits
+   D. 256 bits
+
+2. In AES, the number of rounds for a 128-bit key is:
+   A. 8
+   B. 10
+   C. 12
+   D. 14
+
+3. Which AES step mainly provides substitution?
+   A. ShiftRows
+   B. MixColumns
+   C. SubBytes
+   D. AddRoundKey
+
+4. Which AES step mainly provides permutation?
+   A. ShiftRows
+   B. SubBytes
+   C. MixColumns
+   D. Key Expansion
+
+5. The final AES round omits:
+   A. SubBytes
+   B. ShiftRows
+   C. MixColumns
+   D. AddRoundKey
+
+6. AES key expansion generates:
+   A. A larger block size
+   B. Unique round keys
+   C. A public/private key pair
+   D. Random IVs
+
+7. Rcon is used in AES key expansion to:
+   A. Encrypt plaintext blocks
+   B. Add round-specific constants
+   C. Detect collisions
+   D. Compress the key
+
+8. DES became insufficient mainly because:
+   A. It was too slow for all devices
+   B. Its 56-bit key became vulnerable to brute force
+   C. It used too many rounds
+   D. It could not encrypt files
+
+9. RSA security is based mainly on:
+   A. Fast multiplication
+   B. Difficulty of factoring large integers
+   C. Symmetric key sharing
+   D. Hash collisions
+
+10. In RSA, the modulus n equals:
+    A. p + q
+    B. p × q
+    C. p − q
+    D. p ÷ q
+
+11. Euler’s totient function φ(n) in RSA helps determine:
+    A. Message length
+    B. Number of integers coprime to n
+    C. Cipher block size
+    D. The IV
+
+12. A number e used in RSA public key generation must be:
+    A. A multiple of n
+    B. Coprime to φ(n)
+    C. Equal to p
+    D. Even
+
+13. ECB is dangerous because:
+    A. It cannot encrypt data
+    B. Identical plaintext blocks produce identical ciphertext blocks
+    C. It uses too much memory
+    D. It requires a stream cipher
+
+14. CBC requires:
+    A. A nonce only
+    B. An IV
+    C. A password manager
+    D. No padding ever
+
+15. In CBC, each plaintext block is XORed with:
+    A. The next ciphertext block
+    B. The previous ciphertext block
+    C. The public key
+    D. The round constant
+
+16. Which mode allows parallel encryption and random access?
+    A. CBC
+    B. ECB
+    C. CTR
+    D. CFB
+
+17. Which mode has zero error propagation in decryption?
+    A. OFB
+    B. CBC
+    C. ECB
+    D. None
+
+18. GCM is an example of:
+    A. Hashing
+    B. AEAD
+    C. Public-key exchange
+    D. Digital signature
+
+19. The main goal of AEAD is:
+    A. Compression only
+    B. Confidentiality plus integrity
+    C. Faster password storage
+    D. Key stretching
+
+20. Governance is mainly about:
+    A. Writing malware defenses only
+    B. Direction, oversight, and accountability
+    C. Disk imaging
+    D. Packet sniffing
+
+21. Risk treatment options include all except:
+    A. Avoid
+    B. Mitigate
+    C. Transfer
+    D. Encrypt
+
+22. ISO/IEC 27001 is centered on:
+    A. ISMS
+    B. Penetration testing only
+    C. Virus scanning only
+    D. Password cracking
+
+23. The NIST Cybersecurity Framework includes:
+    A. Identify, Protect, Detect, Respond, Recover
+    B. Plan, Code, Test, Deploy, Ignore
+    C. Scan, Hack, Report, Delete, Repeat
+    D. Audit, Encrypt, Print, Store, Destroy
+
+24. A BIA is used to identify:
+    A. File formats
+    B. Critical business functions and impact of disruption
+    C. Malware signatures
+    D. User passwords
+
+25. RTO means:
+    A. Maximum data loss allowed
+    B. Time to recover service
+    C. Number of backups
+    D. Security policy update time
+
+26. RPO means:
+    A. Maximum acceptable data loss in time
+    B. Recovery hardware budget
+    C. Password reset interval
+    D. Network latency
+
+27. A full backup:
+    A. Saves only changed files
+    B. Saves all selected data
+    C. Saves only database logs
+    D. Saves only metadata
+
+28. Incremental backup:
+    A. Saves everything every time
+    B. Saves changes since the last backup
+    C. Saves changes only since the last full backup
+    D. Deletes old data automatically
+
+29. Differential backup:
+    A. Saves changes since the last full backup
+    B. Saves changes since the last incremental backup
+    C. Saves nothing new
+    D. Replaces full backup
+
+30. The 3-2-1 rule means:
+    A. 3 users, 2 admins, 1 backup
+    B. 3 copies, 2 media types, 1 offsite copy
+    C. 3 firewalls, 2 routers, 1 server
+    D. 3 passwords, 2 keys, 1 token
+
+31. Privacy pseudonymization is dangerous because:
+    A. It always makes data anonymous forever
+    B. It can still be re-identified through linkage
+    C. It deletes the data
+    D. It prevents all attacks
+
+32. Differential privacy works by:
+    A. Removing all data
+    B. Adding mathematically controlled noise
+    C. Encrypting the database only
+    D. Using stronger passwords
+
+33. The “shift left” idea means:
+    A. Move security later in the SDLC
+    B. Move security earlier in the SDLC
+    C. Remove testing
+    D. Delay code review
+
+34. SAST is performed:
+    A. On running applications only
+    B. By analyzing source code or binaries statically
+    C. Only during incident response
+    D. Only in production
+
+35. DAST tests:
+    A. The app while it is running
+    B. The compiler
+    C. The network cable only
+    D. The database schema only
+
+36. Prompt injection is best described as:
+    A. A hardware failure
+    B. Manipulating an LLM’s instructions through crafted input
+    C. A password reuse issue
+    D. A backup failure
+
+37. Excessive agency in AI means:
+    A. The model is too slow
+    B. The AI has too much permission or autonomy
+    C. The model is too small
+    D. The agent has no API access
+
+38. In vulnerability scanning, authenticated scanning usually:
+    A. Sees more internal detail
+    B. Sees less than unauthenticated scans
+    C. Cannot find missing patches
+    D. Is always worse
+
+39. Chain of custody is most important for:
+    A. AI prompt design
+    B. Digital forensic evidence handling
+    C. Password policy
+    D. File compression
+
+40. Order of volatility starts with:
+    A. Backups
+    B. Archived logs
+    C. CPU registers and live memory
+    D. Printed reports
+
+### Answer key
+
+1-B, 2-B, 3-C, 4-A, 5-C, 6-B, 7-B, 8-B, 9-B, 10-B, 11-B, 12-B, 13-B, 14-B, 15-B, 16-C, 17-A, 18-B, 19-B, 20-B, 21-D, 22-A, 23-A, 24-B, 25-B, 26-A, 27-B, 28-B, 29-A, 30-B, 31-B, 32-B, 33-B, 34-B, 35-A, 36-B, 37-B, 38-A, 39-B, 40-C
+
+---
+
+## 2) Short questions
+
+1. Why did AES replace DES in modern cryptography?
+2. What is the role of the state matrix in AES?
+3. Explain the purpose of AddRoundKey in AES.
+4. What do SubBytes, ShiftRows, and MixColumns each contribute?
+5. Why is the final AES round different from the other rounds?
+6. What is the idea behind AES key expansion?
+7. Why is RSA called an asymmetric algorithm?
+8. What is the purpose of Euler’s totient function in RSA?
+9. Why does RSA use two primes instead of one large number?
+10. Why is modular arithmetic important in RSA?
+11. Why is ECB considered insecure for most real data?
+12. How does CBC reduce pattern leakage?
+13. Why does CBC need an IV?
+14. What is the main advantage of CTR mode?
+15. Compare OFB and CFB in one or two lines.
+16. What is AEAD and why is it important?
+17. What is the difference between governance and compliance?
+18. What is risk treatment?
+19. What is the purpose of an ISMS in ISO/IEC 27001?
+20. What are RTO and RPO used for?
+21. Why is the 3-2-1 backup rule useful?
+22. What is the difference between hot, warm, and cold sites?
+23. Why can pseudonymized data still be dangerous?
+24. What is differential privacy trying to protect?
+25. What does “shift left” mean in secure software development?
+26. What is the difference between SAST and DAST?
+27. What is prompt injection in an LLM system?
+28. Why is excessive agency dangerous in AI agents?
+29. What is the purpose of authenticated vulnerability scanning?
+30. What is the difference between incident response and digital forensics?
+
+---
+
+## 3) Long / scenario-based questions
+
+These are close to what your instructor is likely to ask.
+
+### A. Famous case study style
+
+1. **Target-style breach scenario**
+   A retail company’s payment systems were breached after attackers entered through a third-party vendor and moved deeper into the internal network.
+   Explain which security failures likely happened and how network segmentation, access control, and monitoring could have reduced impact.
+
+2. **Equifax-style data exposure**
+   A public-facing web app was left unpatched, and attackers stole sensitive user data.
+   Explain how vulnerability management, patching, asset inventory, and governance failures all connect here.
+
+3. **WannaCry-style ransomware outbreak**
+   A worm spreads rapidly across outdated Windows machines in a hospital, encrypting files and disrupting patient care.
+   Explain the role of patch management, backups, business continuity, and incident response.
+
+4. **SolarWinds-style supply chain compromise**
+   A trusted software update is abused to insert malicious code into many organizations.
+   Explain why supply-chain security is difficult and how secure SDLC, code signing, vendor risk, and monitoring help.
+
+5. **Cambridge Analytica-style privacy misuse**
+   A platform’s user data is collected for one purpose and later used for political profiling.
+   Discuss privacy paradox, context of use, consent, and the limits of anonymization.
+
+### B. Crypto and modes
+
+6. A bank encrypts customer names using ECB and notices repeated patterns in the ciphertext database.
+   Identify the problem and recommend a better mode, explaining why.
+
+7. A company uses CBC but reuses the same IV pattern across sessions.
+   Explain what can go wrong and what a correct IV requirement should look like.
+
+8. A mobile app needs fast encryption for large backups and must support random file access.
+   Which mode fits best, and why is AEAD still important?
+
+9. A security engineer says, “We only need confidentiality; integrity is optional.”
+   Explain why this is risky in modern systems.
+
+10. A team wants to use RSA directly to encrypt large files.
+    Explain why this is not the normal design and what hybrid encryption usually does instead.
+
+### C. GRC, BC/DR, privacy
+
+11. A hospital wants to protect patient records, prove compliance, and keep service available during outages.
+    Map governance, risk management, compliance, BIA, RTO, and RPO to this case.
+
+12. A company backs up data every night, but the backup is kept in the same building as production.
+    Explain why that is weak and how the 3-2-1 rule improves resilience.
+
+13. A fintech platform must decide whether to accept, mitigate, transfer, or avoid a new payment fraud risk.
+    Give one realistic example for each treatment option.
+
+14. A company claims its user dataset is anonymous because names were removed.
+    Explain why this may still fail and how linkage attacks work.
+
+15. A research team wants useful analytics but also wants to protect individual records.
+    Explain how differential privacy changes the design problem.
+
+### D. SSDLC, AI, VAPT, DFIR
+
+16. A developer ships code directly to production without code review, input validation, or security testing.
+    Identify at least five SSDLC failures.
+
+17. A chatbot connected to internal documents is tricked by a user prompt into revealing hidden instructions.
+    Explain prompt injection and system prompt leakage.
+
+18. An AI agent has access to email, file storage, and a payment API, but it follows user instructions too freely.
+    Explain the “excessive agency” risk and what permission boundaries should exist.
+
+19. A security team runs a scanner that finds missing patches, but the results are noisy and incomplete.
+    Explain authenticated vs unauthenticated scanning and why both can be useful.
+
+20. After a ransomware event, the company pulls logs, memory, and disk images.
+    Explain the order of volatility, chain of custody, and the difference between incident response and forensic analysis.
+
+---
+
+## 4) Fast-answer scenario drills
+
+These are good for MCQ/short-question speed practice.
+
+1. A webpage shows repeated encrypted blocks from a logo image. Which mode was likely used?
+2. A file server must recover to data no older than 15 minutes. Which metric matters most?
+3. A password manager and Signal are examples of what broad privacy/security idea?
+4. A control that says “deny by default and fail securely” belongs to which development area?
+5. A security team wants to know “how much damage is tolerable before service must resume.” Which analysis is this?
+6. A model answers with unsafe SQL because its output is directly inserted into a database query. What risk is this?
+7. A forensic examiner documents every transfer of a USB drive and hash values. What is that called?
+8. A company wants to know whether to restore from backup or fail over to a hot site. Which planning area is this?
+9. A system encrypts the same plaintext differently every time because it uses a different counter/nonce. Which mode is likely?
+10. A team wants to detect malware on endpoints, but also needs evidence for court. Which activity is beyond simple defense?
