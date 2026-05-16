@@ -1,15 +1,41 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 void dfs(vector<vector<int>> &adjList, int s, vector<bool> &visited)
 {
     visited[s] = true;
-    cout << s<< " ";
+    cout << s << " ";
 
     for (int i : adjList[s])
         if (!visited[i])
             dfs(adjList, i, visited);
+}
+
+void bfs(vector<vector<int>> &adjList, vector<bool> &visited)
+{
+    queue<int> q;
+
+    visited[0] = true;
+    q.push(0);
+
+    while (!q.empty())
+    {
+        int curr = q.front();
+        q.pop();
+
+        cout << curr << " ";
+
+        for (int &i : adjList[curr])
+        {
+            if (!visited[i])
+            {
+                visited[i] = true;
+                q.push(i);
+            }
+        }
+    }
 }
 
 vector<vector<int>> Graph(int vertices, vector<vector<int>> &edges)
@@ -42,8 +68,13 @@ int main()
         cout << endl;
     }
 
-    cout << "\n\nDFS:\n";
-    dfs(edges, 0, visited);
+    cout << "\n\nDFS: ";
+    dfs(AdjacencyList, 0, visited);
+
+    visited = vector<bool>(nodes, false);
+
+    cout << "\nBFS: ";
+    bfs(AdjacencyList, visited);
 
     return 0;
 }
