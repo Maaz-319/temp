@@ -13,12 +13,12 @@ void dfs(vector<vector<int>> &adjList, int s, vector<bool> &visited)
             dfs(adjList, i, visited);
 }
 
-void bfs(vector<vector<int>> &adjList, vector<bool> &visited)
+void bfs(vector<vector<int>> &adjList, int s, vector<bool> &visited)
 {
     queue<int> q;
 
-    visited[0] = true;
-    q.push(0);
+    visited[s] = true;
+    q.push(s);
 
     while (!q.empty())
     {
@@ -69,12 +69,16 @@ int main()
     }
 
     cout << "\n\nDFS: ";
-    dfs(AdjacencyList, 0, visited);
+    for (int i = 0; i < nodes; i++)
+        if (!visited[i])
+            dfs(AdjacencyList, i, visited);
 
     visited = vector<bool>(nodes, false);
 
     cout << "\nBFS: ";
-    bfs(AdjacencyList, visited);
+    for (int i = 0; i < nodes; i++)
+        if (!visited[i])
+            bfs(AdjacencyList, i, visited);
 
     return 0;
 }
